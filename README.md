@@ -1,62 +1,185 @@
-# Campus Placement Prediction
+# Campus Placement Prediction using Machine Learning
 
-A simple machine learning web app that predicts whether a student is likely to be placed based on academic profile, test score, and work experience.
+A machine learning web application that predicts whether a student is likely to be placed based on their academic performance, test scores, work experience, and educational background.
 
-This project includes:
-- data exploration and model training in a notebook
-- a saved trained model
-- a lightweight Streamlit UI for quick predictions
+This project demonstrates the complete machine learning workflow, including data preprocessing, exploratory data analysis (EDA), model training, evaluation, and deployment using Streamlit.
+
+## Live Demo
+
+**Deployed Application:**  
+https://placementpredictioncit.streamlit.app/
+
+---
+
+## Overview
+
+The application allows users to enter academic and professional details and predicts whether they are likely to be placed. Along with the prediction, it displays the model's confidence score.
+
+---
+
+## Features
+
+- Predicts campus placement status
+- Interactive Streamlit web interface
+- Displays prediction probability
+- Supports multiple higher secondary streams:
+  - Science
+  - Commerce
+  - Arts
+- Includes work experience as an input feature
+- Handles cases where MBA specialization is unavailable
+- Lightweight and easy to use
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Joblib
+- Streamlit
+
+---
 
 ## Project Structure
 
-- `Campus Placement Prediction Using ML.ipynb` - notebook for EDA, preprocessing, training, and evaluation
-- `Placement.csv` - dataset used for training
-- `model_campus_placement` - saved trained model (Joblib)
-- `app.py` - Streamlit app for prediction UI
-- `requirements.txt` - Python dependencies
+```text
+PlacementPrediction/
+│
+├── Campus Placement Prediction Using ML.ipynb
+├── Placement.csv
+├── model_campus_placement
+├── app.py
+├── requirements.txt
+└── README.md
+```
 
-## Model Summary
+### Files
 
-Multiple classifiers were tested (Logistic Regression, SVC, KNN, Decision Tree, Random Forest, Gradient Boosting).
+| File | Description |
+|------|-------------|
+| `Campus Placement Prediction Using ML.ipynb` | Data preprocessing, exploratory data analysis, model training, and evaluation |
+| `Placement.csv` | Dataset used for training |
+| `model_campus_placement` | Serialized trained model using Joblib |
+| `app.py` | Streamlit application |
+| `requirements.txt` | Project dependencies |
 
-Best observed accuracy on the test split:
-- **Logistic Regression: ~88.37%**
+---
 
-## Run Locally
+## Dataset
 
-1. Clone the repository:
+The dataset contains information about students' academic backgrounds and professional experience.
+
+### Input Features
+
+- Gender
+- Secondary Education Percentage (10th)
+- Higher Secondary Percentage (12th)
+- Higher Secondary Stream
+- Degree Percentage
+- Degree Type
+- Work Experience
+- Employability Test Score
+- MBA Percentage
+- MBA Specialization
+
+### Target Variable
+
+- Placement Status
+  - Placed
+  - Not Placed
+
+---
+
+## Machine Learning Models Evaluated
+
+The following classification algorithms were trained and compared:
+
+- Logistic Regression
+- Support Vector Classifier (SVC)
+- K-Nearest Neighbors (KNN)
+- Decision Tree Classifier
+- Random Forest Classifier
+- Gradient Boosting Classifier
+
+### Best Performing Model
+
+| Model | Test Accuracy |
+|--------|--------------:|
+| Logistic Regression | **88.37%** |
+
+The Logistic Regression model achieved the highest accuracy and was selected for deployment.
+
+---
+
+## Installation
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/kancharlanavyatha/PlacementPrediction.git
+```
+
+Navigate to the project directory:
+
+```bash
 cd PlacementPrediction
 ```
 
-2. Install dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Start the app:
+Run the Streamlit application:
 
 ```bash
 streamlit run app.py
 ```
 
-4. Open in browser:
+The application will be available at:
 
-`http://localhost:8501`
+```
+http://localhost:8501
+```
 
+---
 
-## Features in UI
+## Application Workflow
 
-- Clean form-based input
-- Supports different 12th streams (`Arts`, `Commerce`, `Science`)
-- Includes fallback option for specialisation (`Other / Not Sure`)
-- Handles case where MBA is not completed
-- Shows prediction with probability score
+1. Enter the required student details.
+2. Submit the form.
+3. The trained machine learning model processes the input.
+4. The application predicts whether the student is likely to be placed.
+5. The prediction confidence score is displayed.
 
+---
+
+## Future Improvements
+
+- Hyperparameter optimization
+- Cross-validation
+- Feature importance visualization
+- Explainable AI using SHAP
+- Docker support
+- Cloud deployment enhancements
+- Prediction history and analytics
+
+---
 
 ## Author
 
 **Kancharla Navyatha**
+
+GitHub: https://github.com/kancharlanavyatha
+
+---
+
+## License
+
+This project is intended for educational and learning purposes.
