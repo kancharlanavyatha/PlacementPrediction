@@ -47,16 +47,6 @@ streamlit run app.py
 
 `http://localhost:8501`
 
-## Deploy on Streamlit Community Cloud
-
-1. Push this project to GitHub.
-2. Go to [Streamlit Community Cloud](https://share.streamlit.io).
-3. Click **New app**.
-4. Select:
-   - Repository: `kancharlanavyatha/PlacementPrediction`
-   - Branch: `main`
-   - Main file path: `app.py`
-5. Click **Deploy**.
 
 ## Features in UI
 
@@ -66,10 +56,6 @@ streamlit run app.py
 - Handles case where MBA is not completed
 - Shows prediction with probability score
 
-## Notes
-
-- This is a student project for demonstration and learning.
-- Predictions are based on the training dataset and may not generalize to all institutions.
 
 ## Author
 
